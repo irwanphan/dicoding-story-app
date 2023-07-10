@@ -2,6 +2,7 @@
 @use 'sass:map';
 // Custom modules
 @use '../vendors-extensions/bootstrap/components/buttons' as btn;
+@use '../vendors-extensions/bootstrap/components/navbar' as navbar;
 @use '../vendors-extensions/bootstrap/variables/colors' as color;
 
 // ==================================================
@@ -65,3 +66,6 @@ $btn-padding-y: btn.$padding-y;
 $btn-border-radius: btn.$border-radius;
 $btn-border-radius-sm: btn.$border-radius-sm;
 $btn-border-radius-lg: btn.$border-radius-lg;
+// Navbar
+$navbar-light-color: navbar.$navbar-light-color;
+$navbar-padding-x: navbar.$navbar-padding-x;
