@@ -1,3 +1,9 @@
+// Using built-in modules
+@use 'sass:map';
+// Custom modules
+@use '../vendors-extensions/bootstrap/components/buttons' as btn;
+@use '../vendors-extensions/bootstrap/variables/colors' as color;
+
 // ==================================================
 // Bootstrap
 // ==================================================
@@ -13,7 +19,9 @@
 @import '~bootstrap/scss/variables';
     
 // Menerapkan/override variables Bootstrap apa pun di sini
-    
+$theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
+
+
 //
 // Konfigurasi Bootstrap
 //
@@ -50,3 +58,10 @@
 //
 // Tambahkan custom code di sini
 //
+
+// Buttons
+$btn-padding-x: btn.$padding-x;
+$btn-padding-y: btn.$padding-y;
+$btn-border-radius: btn.$border-radius;
+$btn-border-radius-sm: btn.$border-radius-sm;
+$btn-border-radius-lg: btn.$border-radius-lg;

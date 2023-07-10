@@ -1,0 +1,25 @@
+$padding-x: 1.25rem;
+$padding-y: 0.25rem;
+ 
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+$border-style: solid;
+$border-width: 1px 1px 2px 1px;
+$border-color: #222345;
+
+.btn.bordered,
+.btn.bordered:hover,
+.btn.bordered:focus,
+.btn.bordered:active {
+    border-style: $border-style;
+    border-width: $border-width;
+    border-color: $border-color;
+}
+
+.btn.fab {
+    position: fixed;
+    left: 1.25rem;
+    bottom: 1.5rem;
+}
