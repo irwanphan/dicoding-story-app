@@ -36,18 +36,15 @@ const Home = {
         }
         stories.forEach((item) => {
             recordStories.innerHTML += this._templateStoryCard(item);
-            // const storyCard = document.createElement('story-card');
-            // storyCard.id = item.id;
-            // storyCard.name = item.name;
-            // storyCard.photoUrl = item.photoUrl;
-            // storyCard.description = item.description;
-            // storyCard.createdAt = item.createdAt;
-
-            // recordStories.appendChild(storyCard);
         });
     },
 
     _templateStoryCard(story) {
+        const createdAt = new Date(story.createdAt).toLocaleString("id-ID", {
+            month: 'long', day: 'numeric', year: 'numeric', 
+            hour: 'numeric', minute: 'numeric', second: 'numeric'
+        });
+
         return `
             <div class="col-12 col-sm-6 col-lg-4">
                 <story-card
@@ -55,7 +52,7 @@ const Home = {
                     name="${story.name}"
                     photoUrl="${story.photoUrl}"
                     description="${story.description}"
-                    createdAt="${story.createdAt}"
+                    createdAt="${createdAt}"
                 ></story-card>
             </div>
         `

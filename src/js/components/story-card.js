@@ -12,11 +12,7 @@ class StoryCard extends LitElement{
         description: { type: String },
         createdAt: { type: Date },
     }
-
-    // dateTime = new Date(this.createdAt).toLocaleString("id-ID", {
-    //     month: 'long', day: 'numeric', year: 'numeric', 
-    //     hour: 'numeric', minute: 'numeric', second: 'numeric'
-    // });
+    
     render() {
         return html`
             <div class="card bordered h-100 bg-gradient">
