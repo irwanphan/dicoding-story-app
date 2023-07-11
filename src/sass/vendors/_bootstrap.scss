@@ -2,6 +2,7 @@
 @use 'sass:map';
 // Custom modules
 @use '../vendors-extensions/bootstrap/components/buttons' as btn;
+@use '../vendors-extensions/bootstrap/components/cards' as card;
 @use '../vendors-extensions/bootstrap/components/navbar' as navbar;
 @use '../vendors-extensions/bootstrap/variables/colors' as color;
 
@@ -57,7 +58,7 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 @import '~bootstrap/scss/utilities/api';
     
 //
-// Tambahkan custom code di sini
+// Custom codes
 //
 
 // Buttons
@@ -69,3 +70,6 @@ $btn-border-radius-lg: btn.$border-radius-lg;
 // Navbar
 $navbar-light-color: navbar.$navbar-light-color;
 $navbar-padding-x: navbar.$navbar-padding-x;
+// Cards
+$card-padding-x: card.$padding-x;
+$card-padding-y: card.$padding-y;
