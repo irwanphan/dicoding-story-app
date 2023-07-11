@@ -39,6 +39,11 @@ const Home = {
     },
 
     _templateStoryCard(story) {
+        const createdAt = new Date(story.createdAt).toLocaleString("id-ID", {
+            month: 'long', day: 'numeric', year: 'numeric', 
+            hour: 'numeric', minute: 'numeric', second: 'numeric'
+        });
+
         return `
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card bordered h-100 bg-gradient">
@@ -48,6 +53,7 @@ const Home = {
                         </div>
                         <img src="${story.photoUrl}" class="card-img-top" alt="${story.description}">
                         <p class="card-text mt-2">${story.description}</p>
+                        <small><i class="bi bi-calendar2-event-fill"></i> ${createdAt}</small>
                     </div>
                 </div>
             </div>
