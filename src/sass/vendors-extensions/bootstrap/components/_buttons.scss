@@ -1,4 +1,5 @@
 @use '../variables/colors' as color;
+@use '../mixins/mixins' as mixins;
 
 $padding-x: 1.25rem;
 $padding-y: 0.25rem;
@@ -11,13 +12,8 @@ $border-style: solid;
 $border-width: 1px 1px 2px 1px;
 $border-color: color.$gray;
 
-.btn.bordered,
-.btn.bordered:hover,
-.btn.bordered:focus,
-.btn.bordered:active {
-    border-style: $border-style;
-    border-width: $border-width;
-    border-color: $border-color;
+.btn.bordered {
+    @include mixins.create-border($border-style, $border-width, $border-color);
 }
 
 .btn.fab {

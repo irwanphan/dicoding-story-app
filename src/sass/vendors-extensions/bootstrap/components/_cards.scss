@@ -1,4 +1,5 @@
 @use '../variables/colors' as color;
+@use '../mixins/mixins' as mixins;
 
 $padding-x: 1.25rem;
 $padding-y: 0.25rem;
@@ -7,11 +8,6 @@ $border-style: solid;
 $border-width: 1px 1px 2px 1px;
 $border-color: color.$gray;
 
-.card.bordered,
-.card.bordered:hover,
-.card.bordered:focus,
-.card.bordered:active {
-    border-style: $border-style;
-    border-width: $border-width;
-    border-color: $border-color;
+.card.bordered {
+    @include mixins.create-border($border-style, $border-width, $border-color);
 }

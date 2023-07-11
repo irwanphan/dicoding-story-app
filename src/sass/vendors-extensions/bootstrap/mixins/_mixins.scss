@@ -1,0 +1,10 @@
+@mixin create-border($style, $width, $color) {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        border-style: $style;
+        border-width: $width;
+        border-color: $color;
+    }
+}
