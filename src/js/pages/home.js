@@ -9,8 +9,7 @@ const Home = {
         const fetchRecords = await fetch('/data/DATA.json');
         const responseRecords = await fetchRecords.json()
             .then((data) => this._userStory = data.listStory);
-
-        console.log(this._userStory);
+        // console.log(this._userStory);
         
         this._populateStoryDataToCard(this._userStory);
     },
@@ -48,10 +47,10 @@ const Home = {
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card bordered h-100 bg-gradient">
                     <div class="card-body">
-                        <div class="card-author mb-2">
+                        <div class="card-author fw-bold mb-2">
                             <i class="bi bi-person-circle"></i> ${story.name}
                         </div>
-                        <img src="${story.photoUrl}" class="card-img-top" alt="${story.description}">
+                        <img src="${story.photoUrl}" class="card-img-top card-img" alt="${story.description}">
                         <p class="card-text mt-2">${story.description}</p>
                         <small><i class="bi bi-calendar2-event-fill"></i> ${createdAt}</small>
                     </div>
