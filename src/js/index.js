@@ -3,6 +3,7 @@ import '../sass/main.scss';
     
 // Import javascript file as needed
 import Home from './pages/home';
+import './components/top-nav';
 import * as bootstrap from 'bootstrap';
     
 const routes = {

@@ -2,6 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+
+const brandName = 'Story App';
 
 const htmlWebpackPluginConfig = {
   meta: {
@@ -9,7 +12,7 @@ const htmlWebpackPluginConfig = {
     'theme-color': '#4285f4',
   },
   templateParameters: {
-    brandName: 'Story App',
+    brandName: brandName,
     navLinks: `
       <ul class="navbar-nav ms-auto mb-2 mb-md-0 d-flex align-items-center gap-3">
         <li class="nav-item">
@@ -76,6 +79,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new DefinePlugin({
+      BRAND_NAME: JSON.stringify(brandName),
+    }),
+
     new HtmlWebpackPlugin({
       title: 'Home',
       filename: 'index.html',
