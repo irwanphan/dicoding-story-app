@@ -9,11 +9,17 @@ class FAButton extends LitElement{
         super();
     }
 
+    static properties = {
+        url: {String}
+    }
+
     render() {
         return html`
-            <button class="btn btn-blue bordered fab">
+            <a class="btn btn-blue bordered fab"
+                href="${this.url}"
+            >
                 Add Story<i class="bi bi-image"></i>
-            </button>
+            </a>
         `;
     }
 }
