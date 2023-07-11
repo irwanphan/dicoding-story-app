@@ -1,3 +1,5 @@
+import '../components/story-card.js';
+
 const Home = {
     async init() {
         await this._initialData();
@@ -34,27 +36,27 @@ const Home = {
         }
         stories.forEach((item) => {
             recordStories.innerHTML += this._templateStoryCard(item);
+            // const storyCard = document.createElement('story-card');
+            // storyCard.id = item.id;
+            // storyCard.name = item.name;
+            // storyCard.photoUrl = item.photoUrl;
+            // storyCard.description = item.description;
+            // storyCard.createdAt = item.createdAt;
+
+            // recordStories.appendChild(storyCard);
         });
     },
 
     _templateStoryCard(story) {
-        const createdAt = new Date(story.createdAt).toLocaleString("id-ID", {
-            month: 'long', day: 'numeric', year: 'numeric', 
-            hour: 'numeric', minute: 'numeric', second: 'numeric'
-        });
-
         return `
             <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card bordered h-100 bg-gradient">
-                    <div class="card-body">
-                        <div class="card-author fw-bold mb-2">
-                            <i class="bi bi-person-circle"></i> ${story.name}
-                        </div>
-                        <img src="${story.photoUrl}" class="card-img-top card-img" alt="${story.description}">
-                        <p class="card-text mt-2">${story.description}</p>
-                        <small><i class="bi bi-calendar2-event-fill"></i> ${createdAt}</small>
-                    </div>
-                </div>
+                <story-card
+                    id="${story.id}"
+                    name="${story.name}"
+                    photoUrl="${story.photoUrl}"
+                    description="${story.description}"
+                    createdAt="${story.createdAt}"
+                ></story-card>
             </div>
         `
     },

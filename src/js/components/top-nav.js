@@ -1,9 +1,12 @@
-import { LitElement, html, css } from 'lit';
-// import { msg, str } from '@lit/localize';
+import { LitElement, html } from 'lit';
 
 class TopNav extends LitElement{
     createRenderRoot() {
         return this;
+    }
+
+    constructor() {
+        super();
     }
 
     brandName = BRAND_NAME;
@@ -25,9 +28,9 @@ class TopNav extends LitElement{
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent"><%= navLinks %></div>
-            </div>
-        </nav>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent"><%= navLinks %></div>
+                </div>
+            </nav>
         `;
     }
 }
