@@ -4,6 +4,8 @@ import '../sass/main.scss';
 // Import javascript file as needed
 import Home from './pages/home';
 import './components/top-nav';
+import './components/story-card';
+import './components/fa-button';
 import * as bootstrap from 'bootstrap';
     
 const routes = {

@@ -1,5 +1,3 @@
-import '../components/story-card.js';
-
 const Home = {
     async init() {
         await this._initialData();
