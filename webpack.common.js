@@ -89,7 +89,12 @@ module.exports = {
       template: path.resolve(__dirname, 'src/views/index.html'),
       ...htmlWebpackPluginConfig,
     }),
-
+    new HtmlWebpackPlugin({
+      title: 'Add Records',
+      filename: 'stories/add.html',
+      template: path.resolve(__dirname, 'src/views/stories/add.html'),
+      ...htmlWebpackPluginConfig,
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
