@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 class TopNav extends LitElement{
     createRenderRoot() {
@@ -12,27 +13,36 @@ class TopNav extends LitElement{
     brandName = BRAND_NAME;
     render() {
         return html`
-            <nav class="navbar navbar-expand-md bg-blue">
+            <nav class="navbar bg-blue">
                 <div class="container">
                     <span class="navbar-brand">${this.brandName}</span>
 
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <button class="btn btn-blue" 
+                        type="button" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#staticBackdrop" 
+                        aria-controls="staticBackdrop"
+                    >S</button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent"><%= navLinks %></div>
                 </div>
             </nav>
+            <div class="offcanvas offcanvas-start" 
+                id="staticBackdrop" 
+                tabindex="-1" 
+                data-bs-backdrop="static" 
+                aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        <%= navLinks %>
+                    </div>
+                </div>
+            </div>
         `;
-    }
+    }                        
 }
 
 customElements.define('top-nav', TopNav);
