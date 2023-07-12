@@ -6,6 +6,7 @@ import Home from './pages/home';
 import './components/top-nav';
 import './components/story-card';
 import './components/fa-button';
+import './components/off-canvas';
 // import * as bootstrap from 'bootstrap';
     
 const routes = {
