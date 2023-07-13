@@ -4,6 +4,7 @@
 @use '../vendors-extensions/bootstrap/components/buttons' as btn;
 @use '../vendors-extensions/bootstrap/components/cards' as card;
 @use '../vendors-extensions/bootstrap/components/navbar' as navbar;
+@use '../vendors-extensions/bootstrap/components/offcanvas' as offcanvas;
 @use '../vendors-extensions/bootstrap/variables/colors' as color;
 
 // ==================================================
@@ -75,3 +76,4 @@ $navbar-padding-x: navbar.$navbar-padding-x;
 // Cards
 $card-padding-x: card.$padding-x;
 $card-padding-y: card.$padding-y;
+// Offcanvas

@@ -1,0 +1,25 @@
+@use '../variables/colors' as color;
+@use '../mixins/mixins' as mixins;
+
+$title-font-size: 1.25rem;
+$title-font-weight: 600;
+ 
+$color: color.$gray;
+
+.offcanvas {
+    .offcanvas-title {
+        font-size: $title-font-size;
+        font-weight: $title-font-weight;
+        color: $color;
+    }
+    .offcanvas-header {
+        .btn-close {
+            color: $color;
+            background-color: transparent;
+            border: none;
+            &:hover {
+                color: lighten($color, 10%);
+            }
+        }
+    }
+}
