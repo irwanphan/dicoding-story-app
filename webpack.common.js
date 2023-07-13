@@ -74,7 +74,7 @@ module.exports = {
       ...htmlWebpackPluginConfig,
     }),
     new HtmlWebpackPlugin({
-      title: 'Add Records',
+      title: 'Add Story',
       filename: 'stories/add.html',
       template: path.resolve(__dirname, 'src/views/stories/add.html'),
       ...htmlWebpackPluginConfig,

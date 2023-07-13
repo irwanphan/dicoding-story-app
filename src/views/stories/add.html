@@ -18,6 +18,47 @@
       <div class="main-content">
         <div class="container py-5">
           <h1 class="mb-3">Add Story</h1>
+
+          <form class="row g-3" id="addStoryForm" novalidate>
+            <div class="col-12 col-md-6">
+              <label for="storyImage" class="form-label">Image Upload</label>
+              <div style="width: 100%; height: 15rem" class="mb-3">
+                <img
+                  class="img-fluid h-100"
+                  src=""
+                  alt="Story Image"
+                  id="StoryImageUpload"
+                />
+                <div
+                  class="w-100 h-100 d-none"
+                  style="
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                  "
+                  id="StoryImageUploadChange"
+                ></div>
+              </div>
+              <input
+                type="file"
+                class="form-control"
+                id="storyImage"
+                accept="image/*"
+                required
+              />
+              <div class="invalid-feedback">Field required</div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label for="validationCustomNotes" class="form-label">Description</label>
+              <textarea class="form-control" id="validationCustomNotes" rows="3"></textarea>
+              <div class="invalid-feedback">Field required</div>
+            </div>
+            
+            <div class="col-12 text-end">
+              <button class="btn btn-blue bordered" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </main>

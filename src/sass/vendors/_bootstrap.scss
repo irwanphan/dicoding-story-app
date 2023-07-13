@@ -52,6 +52,7 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 @import '~bootstrap/scss/navbar'; // Requires nav
 @import '~bootstrap/scss/card';
 @import '~bootstrap/scss/offcanvas';
+@import '~bootstrap/scss/forms';
     
 //
 // Utilities API untuk menghasilkan utility classes
