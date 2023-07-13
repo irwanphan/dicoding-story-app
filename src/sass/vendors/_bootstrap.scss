@@ -24,7 +24,6 @@
 // Menerapkan/override variables Bootstrap apa pun di sini
 $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 
-
 //
 // Konfigurasi Bootstrap
 //
@@ -76,4 +75,3 @@ $navbar-padding-x: navbar.$navbar-padding-x;
 // Cards
 $card-padding-x: card.$padding-x;
 $card-padding-y: card.$padding-y;
-// Offcanvas

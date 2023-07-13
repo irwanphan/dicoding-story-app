@@ -13,7 +13,7 @@ class TopNav extends LitElement{
     brandName = BRAND_NAME;
     render() {
         return html`
-            <nav class="navbar bg-blue">
+            <nav class="navbar custom bg-blue">
                 <div class="container">
                     <span class="navbar-brand">${this.brandName}</span>
 
@@ -22,7 +22,7 @@ class TopNav extends LitElement{
                         data-bs-toggle="offcanvas" 
                         data-bs-target="#staticBackdrop" 
                         aria-controls="staticBackdrop"
-                    >S</button>
+                    ><i class="bi bi-three-dots"></i></button>
                 </div>
             </nav>
             <off-canvas></off-canvas>

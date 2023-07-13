@@ -3,22 +3,56 @@
 
 $title-font-size: 1.25rem;
 $title-font-weight: 600;
+
+$padding-y: 1rem;
+$padding-x: 1.25rem;
  
 $color: color.$gray;
+$line-color: color.$lightgray;
 
 .offcanvas {
-    .offcanvas-title {
-        font-size: $title-font-size;
-        font-weight: $title-font-weight;
-        color: $color;
-    }
     .offcanvas-header {
+        padding: $padding-y $padding-x;
+        .offcanvas-title {
+            font-size: $title-font-size;
+            font-weight: $title-font-weight;
+            color: $color;
+        }
         .btn-close {
             color: $color;
             background-color: transparent;
             border: none;
+            @include mixins.transition(0.3s);
             &:hover {
-                color: lighten($color, 10%);
+                color: lighten($color, 30%);
+            }
+        }
+    }
+    .offcanvas-body {
+        padding: $padding-y $padding-x;
+        .offcanvas-user {
+            width: 5rem;
+            height: 5rem;
+            line-height: 4rem;
+            text-align: center;
+            @include mixins.borderRadius(50%);
+            border: 0.5rem solid color.$blue;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            i.bi {
+                font-size: 4rem;
+                color: color.$lightgray;
+            }
+        }
+        .offcanvas-nav {
+            .nav-link {
+                color: $color;
+                padding: 0.625rem;
+                border-bottom: 1px solid $line-color;
+                @include mixins.transition(0.3s);
+                &:hover {
+                    color: lighten($color, 30%);
+                }
             }
         }
     }
