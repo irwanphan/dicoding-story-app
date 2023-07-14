@@ -1,7 +1,7 @@
 @use '../variables/colors' as color;
 
 $navbar-light-color: color.$gray;
-$navbar-padding-x: 0.625rem;
+$navbar-padding-x: 0.5rem;
 $navbar-padding-y: 0.5rem;
 
 .navbar.custom {

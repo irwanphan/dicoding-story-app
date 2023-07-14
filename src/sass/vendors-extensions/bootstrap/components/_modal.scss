@@ -1,0 +1,23 @@
+@use '../variables/colors' as color;
+@use '../mixins/mixins' as mixins;
+
+$font-family: 'Montserrat', 'Poppins', sans-serif;
+$header-background-color: color.$blue;
+$header-border: 2px solid color.$gray;
+$header-font-weight: 600;
+
+$border-style: solid;
+$border-width: 1px 1px 2px 1px;
+$border-color: color.$gray;
+
+.modal {
+    font-family: $font-family;
+    .modal-header {
+        background-color: $header-background-color;
+        border-bottom: $header-border;
+        font-weight: $header-font-weight;
+    }
+    .bordered {
+        @include mixins.create-border($border-style, $border-width, $border-color);
+    }
+} 

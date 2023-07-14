@@ -4,6 +4,7 @@
 @use '../vendors-extensions/bootstrap/components/buttons' as btn;
 @use '../vendors-extensions/bootstrap/components/cards' as card;
 @use '../vendors-extensions/bootstrap/components/navbar' as navbar;
+@use '../vendors-extensions/bootstrap/components/modal' as modal;
 @use '../vendors-extensions/bootstrap/components/offcanvas' as offcanvas;
 @use '../vendors-extensions/bootstrap/variables/colors' as color;
 
@@ -46,6 +47,7 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 // Komponen-Komponen
 @import '~bootstrap/scss/tables';
 @import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/close';
 @import '~bootstrap/scss/transitions';
 @import '~bootstrap/scss/dropdown';
 @import '~bootstrap/scss/nav';
@@ -53,6 +55,7 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 @import '~bootstrap/scss/card';
 @import '~bootstrap/scss/offcanvas';
 @import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/modal';
     
 //
 // Utilities API untuk menghasilkan utility classes
@@ -71,7 +74,12 @@ $btn-border-radius-sm: btn.$border-radius-sm;
 $btn-border-radius-lg: btn.$border-radius-lg;
 // Navbar
 $navbar-light-color: navbar.$navbar-light-color;
-$navbar-padding-x: navbar.$navbar-padding-x;
 // Cards
 $card-padding-x: card.$padding-x;
 $card-padding-y: card.$padding-y;
+// Offcanvas
+
+// Modal
+$modal-border-style: modal.$border-style;
+$modal-border-width: modal.$border-width;
+$modal-border-color: modal.$border-color;

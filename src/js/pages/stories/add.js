@@ -1,22 +1,22 @@
 const Add = {
     async init() {
-        this._initialListener();
+        await this._initialListener();
     },
    
-    _initialListener() {
-        const evidenceInput = document.querySelector('#validationCustomEvidence');
-        evidenceInput.addEventListener('change', () => {
+    async _initialListener() {
+        const imageUpload = document.querySelector('#storyImage');
+        imageUpload.addEventListener('change', () => {
             this._updatePhotoPreview();
         });
     
-        const addFormRecord = document.querySelector('#addRecordForm');
-        addFormRecord.addEventListener(
+        const addStoryForm = document.querySelector('#addStoryForm');
+        addStoryForm.addEventListener(
             'submit',
             (event) => {
                 event.preventDefault();
                 event.stopPropagation();
     
-                addFormRecord.classList.add('was-validated');
+                addStoryForm.classList.add('was-validated');
                 this._sendPost();
             },
             false,
@@ -35,34 +35,26 @@ const Add = {
     },
    
     _getFormData() {
-        const nameInput = document.querySelector('#validationCustomRecordName');
-        const amountInput = document.querySelector('#validationCustomAmount');
-        const dateInput = document.querySelector('#validationCustomDate');
-        const evidenceInput = document.querySelector('#validationCustomEvidence');
-        const descriptionInput = document.querySelector('#validationCustomNotes');
-        const typeInput = document.querySelector('input[name="recordType"]:checked');
+        const storyImageInput = document.querySelector('#storyImage');
+        const descriptionInput = document.querySelector('#storyNotes');
    
         return {
-            name: nameInput.value,
-            amount: Number(amountInput.value),
-            date: new Date(dateInput.value),
-            evidence: evidenceInput.files[0],
+            storyImage: storyImageInput.files[0],
             description: descriptionInput.value,
-            type: typeInput.value,
         };
     },
    
     _updatePhotoPreview() {
-        const evidenceImgChange = document.querySelector('#validationCustomEvidenceImgChange');
-        const evidenceImgInput = document.querySelector('#validationCustomEvidence');
+        const storyImageChange = document.querySelector('#StoryImageUploadChange');
+        const storyImageInput = document.querySelector('#storyImage');
       
-        const photo = evidenceImgInput.files[0];
+        const photo = storyImageInput.files[0];
         if (!photo) return;
    
         const reader = new FileReader();
         reader.onload = (event) => {
-            evidenceImgChange.parentElement.classList.remove('d-none');
-            evidenceImgChange.style.backgroundImage = `url('${event.target.result}')`;
+            storyImageChange.classList.remove('d-none');
+            storyImageChange.style.backgroundImage = `url('${event.target.result}')`;
         };   
         reader.readAsDataURL(photo);
     },

@@ -3,6 +3,7 @@ import '../sass/main.scss';
     
 // Import javascript file as needed
 import Home from './pages/home';
+import Add from './pages/stories/add';
 import './components/top-nav';
 import './components/story-card';
 import './components/fa-button';
@@ -11,9 +12,13 @@ import './components/off-canvas';
     
 const routes = {
     '/': Home,
+    '/stories/add.html': Add,
 };
     
 const detectRoute = () => routes[window.location.pathname];
+
+const checkPath = window.location.pathname
+console.log('checkPath ', checkPath)
     
 const initPages = () => {
     const header = document.querySelector('header');
@@ -29,5 +34,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     initPages();
     
     const route = detectRoute();
+    console.log('route ', route)
     route.init();
 });
