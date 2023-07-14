@@ -7,9 +7,9 @@ const { DefinePlugin } = require('webpack');
 const brandName = 'Story App';
 const navLinks = [
   {url: '/', text: 'Home'},
-  {url: '/about', text: 'About Dev'},
-  {url: '/stories/add', text: 'Add Story'},
-  {url: '/login', text: 'Login'},
+  {url: '/about.html', text: 'About Dev'},
+  {url: '/stories/add.html', text: 'Add Story'},
+  {url: '/login.html', text: 'Login'},
 ]
 
 const htmlWebpackPluginConfig = {
@@ -71,6 +71,12 @@ module.exports = {
       title: 'Home',
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/views/index.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'About',
+      filename: 'about.html',
+      template: path.resolve(__dirname, 'src/views/about.html'),
       ...htmlWebpackPluginConfig,
     }),
     new HtmlWebpackPlugin({
