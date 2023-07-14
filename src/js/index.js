@@ -8,6 +8,7 @@ import './components/top-nav';
 import './components/story-card';
 import './components/fa-button';
 import './components/off-canvas';
+import './components/image-preview';
 // import * as bootstrap from 'bootstrap';
     
 const routes = {
@@ -17,9 +18,6 @@ const routes = {
     
 const detectRoute = () => routes[window.location.pathname];
 
-const checkPath = window.location.pathname
-console.log('checkPath ', checkPath)
-    
 const initPages = () => {
     const header = document.querySelector('header');
     const main = document.querySelector('main');
@@ -34,6 +32,5 @@ window.addEventListener('DOMContentLoaded', async () => {
     initPages();
     
     const route = detectRoute();
-    console.log('route ', route)
     route.init();
 });

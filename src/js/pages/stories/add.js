@@ -45,16 +45,15 @@ const Add = {
     },
    
     _updatePhotoPreview() {
-        const storyImageChange = document.querySelector('#StoryImageUploadChange');
+        const storyImageChange = document.querySelector('image-preview');
         const storyImageInput = document.querySelector('#storyImage');
-      
+
         const photo = storyImageInput.files[0];
         if (!photo) return;
    
         const reader = new FileReader();
         reader.onload = (event) => {
-            storyImageChange.classList.remove('d-none');
-            storyImageChange.style.backgroundImage = `url('${event.target.result}')`;
+            storyImageChange.setAttribute("fileUrl", event.target.result);
         };   
         reader.readAsDataURL(photo);
     },
