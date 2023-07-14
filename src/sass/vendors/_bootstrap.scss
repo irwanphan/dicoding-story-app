@@ -15,12 +15,14 @@
 //
 // Functions Bootstrap
 //
-@import '~bootstrap/scss/functions';
+// @import '~bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/functions';
     
 //
 // Variables Bootstrap
 //
-@import '~bootstrap/scss/variables';
+// @import '~bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables';
     
 // Menerapkan/override variables Bootstrap apa pun di sini
 $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
@@ -28,39 +30,57 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 //
 // Konfigurasi Bootstrap
 //
-@import '~bootstrap/scss/maps';
-@import '~bootstrap/scss/mixins';
-@import '~bootstrap/scss/root';
-@import '~bootstrap/scss/utilities';
-@import '~bootstrap/scss/reboot';
+// @import '~bootstrap/scss/maps';
+@import '../../../node_modules/bootstrap/scss/maps';
+// @import '~bootstrap/scss/mixins';
+@import '../../../node_modules/bootstrap/scss/mixins';
+// @import '~bootstrap/scss/root';
+@import '../../../node_modules/bootstrap/scss/root';
+// @import '~bootstrap/scss/utilities';
+@import '../../../node_modules/bootstrap/scss/utilities';
+// @import '~bootstrap/scss/reboot';
+@import '../../../node_modules/bootstrap/scss/reboot';
     
 //
 // Layouts dan components
 //
-@import '~bootstrap/scss/type';
-@import '~bootstrap/scss/images';
-@import '~bootstrap/scss/containers';
-@import '~bootstrap/scss/grid';
+// @import '~bootstrap/scss/type';
+@import '../../../node_modules/bootstrap/scss/type';
+// @import '~bootstrap/scss/images';
+@import '../../../node_modules/bootstrap/scss/images';
+// @import '~bootstrap/scss/containers';
+@import '../../../node_modules/bootstrap/scss/containers';
+// @import '~bootstrap/scss/grid';
+@import '../../../node_modules/bootstrap/scss/grid';
     
-@import '~bootstrap/scss/helpers';
+// @import '~bootstrap/scss/helpers';
+@import '../../../node_modules/bootstrap/scss/helpers';
     
 // Komponen-Komponen
-@import '~bootstrap/scss/tables';
-@import '~bootstrap/scss/buttons';
-@import '~bootstrap/scss/close';
-@import '~bootstrap/scss/transitions';
-@import '~bootstrap/scss/dropdown';
-@import '~bootstrap/scss/nav';
-@import '~bootstrap/scss/navbar'; // Requires nav
-@import '~bootstrap/scss/card';
-@import '~bootstrap/scss/offcanvas';
-@import '~bootstrap/scss/forms';
-@import '~bootstrap/scss/modal';
+// @import '~bootstrap/scss/buttons';
+@import '../../../node_modules/bootstrap/scss/buttons';
+// @import '~bootstrap/scss/close';
+@import '../../../node_modules/bootstrap/scss/close';
+// @import '~bootstrap/scss/transitions';
+@import '../../../node_modules/bootstrap/scss/transitions';
+// @import '~bootstrap/scss/nav';
+@import '../../../node_modules/bootstrap/scss/nav';
+// @import '~bootstrap/scss/navbar'; // Requires nav
+@import '../../../node_modules/bootstrap/scss/navbar';
+// @import '~bootstrap/scss/card';
+@import '../../../node_modules/bootstrap/scss/card';
+// @import '~bootstrap/scss/offcanvas';
+@import '../../../node_modules/bootstrap/scss/offcanvas';
+// @import '~bootstrap/scss/forms';
+@import '../../../node_modules/bootstrap/scss/forms';
+// @import '~bootstrap/scss/modal';
+@import '../../../node_modules/bootstrap/scss/modal';
     
 //
 // Utilities API untuk menghasilkan utility classes
 //
-@import '~bootstrap/scss/utilities/api';
+// @import '~bootstrap/scss/utilities/api';
+@import '../../../node_modules/bootstrap/scss/utilities/api';
     
 //
 // Custom codes
