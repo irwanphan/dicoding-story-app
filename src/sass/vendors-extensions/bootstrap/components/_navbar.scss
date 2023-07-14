@@ -1,13 +1,10 @@
 @use '../variables/colors' as color;
 
 $navbar-light-color: color.$gray;
-$navbar-padding-x: 0.5rem;
-$navbar-padding-y: 0.5rem;
 
 .navbar.custom {
     border-bottom: 2px solid color.$gray;
     box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.1);
-    padding: $navbar-padding-y $navbar-padding-x;
 }
 span.navbar-brand {
     font-family: 'Montserrat', 'Poppins', sans-serif;

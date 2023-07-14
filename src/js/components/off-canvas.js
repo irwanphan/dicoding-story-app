@@ -20,10 +20,9 @@ class OffCanvas extends LitElement{
         ]
     }
 
-
     render() {
         return html`
-            <div class="offcanvas offcanvas-start" 
+            <div class="offcanvas offcanvas-end" 
                 id="staticBackdrop" 
                 tabindex="-1" 
                 data-bs-backdrop="static" 
