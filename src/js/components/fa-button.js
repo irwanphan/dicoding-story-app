@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import { msg } from '@lit/localize';
 
 class FAButton extends LitElement{
     createRenderRoot() {
