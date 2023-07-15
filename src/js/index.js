@@ -12,6 +12,7 @@ import './components/story-card';
 import './components/fa-button';
 import './components/off-canvas';
 import './components/image-preview';
+import './components/app-footer';
 // import * as bootstrap from 'bootstrap';
     
 const routes = {
