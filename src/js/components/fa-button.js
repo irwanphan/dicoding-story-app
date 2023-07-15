@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class FAButton extends LitElement{
     createRenderRoot() {
@@ -18,7 +19,7 @@ class FAButton extends LitElement{
             <a class="btn btn-blue bordered fab"
                 href="${this.url}"
             >
-                Add Story<i class="bi bi-image"></i>
+                ${msg('Add Story')}<i class="bi bi-image"></i>
             </a>
         `;
     }

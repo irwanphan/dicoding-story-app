@@ -1,8 +1,6 @@
 import { html, css, LitElement } from 'lit';
-import { msg, updateWhenLocaleChanges } from '@lit/localize';
-
 class AppFooter extends LitElement {
-    static styles = css`
+    static styles = css `
         .app-footer {
             padding: 1rem;
             text-align: center;
@@ -15,18 +13,11 @@ class AppFooter extends LitElement {
             color: #e25555;
         }
     `;
-
     constructor() {
         super();
     }
-
     render() {
-        return html`
-            <div class="app-footer">
-                ${msg(html`Built with <span class="love">&#9829;</span>, view repo on`)} <a href="https://github.com/irwanphan/dicoding-story-app" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
-        `;
+        return html `\n            <div class="app-footer">\n                Built with <span class="love">&#9829;</span>, view repo on <a href="https://github.com/irwanphan/dicoding-story-app" target="_blank" rel="noopener noreferrer">GitHub</a>\n            </div>\n        `;
     }
 }
-
 customElements.define('app-footer', AppFooter);

@@ -1,34 +1,23 @@
-import { msg } from "@lit/localize";
-
 const Home = {
     async init() {
         await this._initialData();
     },
-   
     async _initialData() {
         this._userStory = null;
-
         const fetchRecords = await fetch('/data/DATA.json');
         const responseRecords = await fetchRecords.json()
             .then((data) => this._userStory = data.listStory);
         // console.log(this._userStory);
-        
         this._populateStoryDataToCard(this._userStory);
     },
-   
     _populateStoryDataToCard(stories = null) {
         if (!(typeof stories === 'object')) {
-            throw new Error(
-                `Parameter responseRecords should be an object.`,
-            );
+            throw new Error(`Parameter responseRecords should be an object.`);
         }
-
         if (!Array.isArray(stories)) {
             throw new Error('Parameter stories should be an array.');
         }
-
         const recordStories = document.querySelector('#recordStories');
-   
         recordStories.innerHTML = '';
         if (stories.length <= 0) {
             recordStories.innerHTML = this._templateEmptyStory();
@@ -38,13 +27,11 @@ const Home = {
             recordStories.innerHTML += this._templateStoryCard(item);
         });
     },
-
     _templateStoryCard(story) {
-        const createdAt = new Date(story.createdAt).toLocaleString("en-EN", {
-            month: 'long', day: 'numeric', year: 'numeric', 
+        const createdAt = new Date(story.createdAt).toLocaleString("id-ID", {
+            month: 'long', day: 'numeric', year: 'numeric',
             hour: 'numeric', minute: 'numeric', second: 'numeric'
         });
-
         return `
             <div class="col-12 col-sm-6 col-lg-4">
                 <story-card
@@ -55,9 +42,8 @@ const Home = {
                     createdAt="${createdAt}"
                 ></story-card>
             </div>
-        `
+        `;
     },
-
     _templateEmptyStory() {
         const recordStories = document.querySelector('#recordStories');
         return `
@@ -65,5 +51,4 @@ const Home = {
         `;
     },
 };
-   
 export default Home;

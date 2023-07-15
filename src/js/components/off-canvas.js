@@ -13,7 +13,7 @@ class OffCanvas extends LitElement{
     constructor() {
         super();
         this.links = [
-            {url: '/', text: 'Home'},
+            {url: '/', text: 'Home' },
             {url: '/about.html', text: 'About Dev'},
             {url: '/stories/add.html', text: 'Add Story'},
             {url: '/login.html', text: 'Login'},
