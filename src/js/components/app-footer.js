@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit';
-import { msg, updateWhenLocaleChanges } from '@lit/localize';
+import { msg } from '@lit/localize';
 
 class AppFooter extends LitElement {
     static styles = css`
