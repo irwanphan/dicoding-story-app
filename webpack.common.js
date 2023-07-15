@@ -80,6 +80,12 @@ module.exports = {
       ...htmlWebpackPluginConfig,
     }),
     new HtmlWebpackPlugin({
+      title: 'Login',
+      filename: 'login.html',
+      template: path.resolve(__dirname, 'src/views/login.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
       title: 'Add Story',
       filename: 'stories/add.html',
       template: path.resolve(__dirname, 'src/views/stories/add.html'),

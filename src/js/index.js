@@ -4,6 +4,7 @@ import '../sass/main.scss';
 // Import javascript file as needed
 import Home from './pages/home';
 import About from './pages/about';
+import Login from './pages/login';
 import Add from './pages/stories/add';
 import './components/like-button';
 import './components/top-nav';
@@ -16,6 +17,7 @@ import './components/image-preview';
 const routes = {
     '/': Home,
     '/about.html': About,
+    '/login.html': Login,
     '/stories/add.html': Add,
 };
     

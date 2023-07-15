@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+  </head>
+  <body>
+    <header>
+      <top-nav></top-nav>
+      <off-canvas></off-canvas>
+    </header>
+ 
+    <main>
+      <div class="main-content">
+        <div class="container p-4">
+          <h4>Login</h4>
+          
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required />
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required />
+              <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <div class="text-end">
+              <button type="submit" class="btn btn-blue bordered">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+ 
+    <footer>
+
+    </footer>
+  </body>
+</html>
