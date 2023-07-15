@@ -4,9 +4,29 @@
 <body>
 <trans-unit id="s1f30f2eaf1e38fb9">
   <source>Add Story</source>
+  <target>Aldonu Rakonton</target>
 </trans-unit>
 <trans-unit id="h9a989a8952ec2d9f">
   <source>Built with <x id="0" equiv-text="&lt;span class=&quot;love&quot;&gt;"/>♥<x id="1" equiv-text="&lt;/span&gt;"/>, view repo on</source>
+  <target>Konstruita kun <x id="0" equiv-text="&lt;span class=&quot;love&quot;&gt;"/>♥<x id="1" equiv-text="&lt;/span&gt;"/>, vidi deponejon sur</target>
+</trans-unit>
+<trans-unit id="ha7511877a93f8cd1">
+  <source>
+    <x id="0" equiv-text="&lt;p&gt;"/>
+    This app is built based on what I learn on Dicoding Course: Learn Front-End Development Tools for Intermediate (Belajar Tools Front-End Web Intermediate). Things I learned in this course are the usage of Lit Components, Utilizing and Customizing Bootstrap, and Sass usage
+    <x id="1" equiv-text="&lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Contact me via my email on: <x id="2" equiv-text="&lt;a href=&quot;mailto:irwanphan@gmail.com&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>irwanphan@gmail.com<x id="3" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    This github repo is on <x id="4" equiv-text="&lt;a href=&quot;https://github.com/irwanphan/dicoding-story-app&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://github.com/irwanphan/dicoding-story-app<x id="5" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    My personal portfolio page is on <x id="6" equiv-text="&lt;a href=&quot;https://irwanphan.github.io&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://irwanphan.github.io<x id="7" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                "/>
+  </source>
+  <target>
+    <x id="0" equiv-text="&lt;p&gt;"/>
+    Ĉi tiu programo estas konstruita surbaze de tio, kion mi lernas en Dikoda Kurso: Lernu Front-End Development Tools for Intermediate (Belajar Tools Front-End Web Intermediate). Aferoj, kiujn mi lernis en ĉi tiu kurso, estas la uzado de Lit Components, Uzado kaj Agordado de Bootstrap kaj Sass-uzado.
+    <x id="1" equiv-text="&lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Kontaktu min per mia retpoŝto ĉe: <x id="2" equiv-text="&lt;a href=&quot;mailto:irwanphan@gmail.com&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>irwanphan@gmail.com<x id="3" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Ĉi tiu github-deponejon estas ŝaltita <x id="4" equiv-text="&lt;a href=&quot;https://github.com/irwanphan/dicoding-story-app&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://github.com/irwanphan/dicoding-story-app<x id="5" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Mia persona biletujo paĝo estas ŝaltita <x id="6" equiv-text="&lt;a href=&quot;https://irwanphan.github.io&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://irwanphan.github.io<x id="7" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                "/>
+  </target>
 </trans-unit>
 </body>
 </file>

@@ -10,6 +10,24 @@
   <source>Built with <x id="0" equiv-text="&lt;span class=&quot;love&quot;&gt;"/>♥<x id="1" equiv-text="&lt;/span&gt;"/>, view repo on</source>
   <target>Dibangun dengan <x id="0" equiv-text="&lt;span class=&quot;love&quot;&gt;"/>♥<x id="1" equiv-text="&lt;/span&gt;"/>, lihat repo ini di</target>
 </trans-unit>
+<trans-unit id="ha7511877a93f8cd1">
+  <source>
+    <x id="0" equiv-text="&lt;p&gt;"/>
+    This app is built based on what I learn on Dicoding Course: Learn Front-End Development Tools for Intermediate (Belajar Tools Front-End Web Intermediate). Things I learned in this course are the usage of Lit Components, Utilizing and Customizing Bootstrap, and Sass usage
+    <x id="1" equiv-text="&lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Contact me via my email on: <x id="2" equiv-text="&lt;a href=&quot;mailto:irwanphan@gmail.com&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>irwanphan@gmail.com<x id="3" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    This github repo is on <x id="4" equiv-text="&lt;a href=&quot;https://github.com/irwanphan/dicoding-story-app&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://github.com/irwanphan/dicoding-story-app<x id="5" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    My personal portfolio page is on <x id="6" equiv-text="&lt;a href=&quot;https://irwanphan.github.io&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://irwanphan.github.io<x id="7" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                "/>
+  </source>
+  <target>
+    <x id="0" equiv-text="&lt;p&gt;"/>
+    Aplikasi ini dibangun berdasarkan apa yang saya pelajari di kursus Dicoding: Belajar Tools Front-End Web Intermediate. Hal yang saya pelajari dalam kursus ini adalah penggunaan Komponen Lit, Memanfaatkan dan Mengkonfigurasi Framework Bootstrap, dan penggunaan Sass
+    <x id="1" equiv-text="&lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Hubungi saya melalui email: <x id="2" equiv-text="&lt;a href=&quot;mailto:irwanphan@gmail.com&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>irwanphan@gmail.com<x id="3" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Repo github aplikasi ini ada di <x id="4" equiv-text="&lt;a href=&quot;https://github.com/irwanphan/dicoding-story-app&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://github.com/irwanphan/dicoding-story-app<x id="5" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                    &lt;p&gt;"/>
+    Berikut halaman portfolio pribadi saya: <x id="6" equiv-text="&lt;a href=&quot;https://irwanphan.github.io&quot; class=&quot;link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover&quot;&gt;"/>https://irwanphan.github.io<x id="7" equiv-text="&lt;/a&gt;&#10;                    &lt;/p&gt;&#10;                "/>
+  </target>
+</trans-unit>
 </body>
 </file>
 </xliff>
