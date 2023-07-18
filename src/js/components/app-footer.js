@@ -16,9 +16,6 @@ class AppFooter extends LitElement {
         }
     `;
 
-    constructor() {
-        super();
-    }
 
     render() {
         return html`

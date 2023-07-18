@@ -6,10 +6,6 @@ class FAButton extends LitElement{
         return this;
     }
 
-    constructor() {
-        super();
-    }
-
     static properties = {
         url: {String}
     }

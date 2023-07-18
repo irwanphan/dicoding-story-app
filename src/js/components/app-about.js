@@ -8,10 +8,6 @@ class AppAbout extends LitElement {
         }
     `;
 
-    constructor() {
-        super();
-    }
-
     render() {
         return html`
             <div class="app-about">

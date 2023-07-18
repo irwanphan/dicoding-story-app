@@ -6,10 +6,6 @@ class TopNav extends LitElement{
         return this;
     }
 
-    constructor() {
-        super();
-    }
-
     brandName = BRAND_NAME;
     navLinks = NAV_LINKS;
 
