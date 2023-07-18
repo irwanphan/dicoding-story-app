@@ -5,7 +5,7 @@ import '../sass/main.scss';
 import Home from './pages/home';
 import About from './pages/about';
 import Login from './pages/login';
-import Login from './pages/register';
+import Register from './pages/register';
 import Add from './pages/stories/add';
 import './components/like-button';
 import './components/top-nav';
