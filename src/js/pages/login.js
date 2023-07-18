@@ -6,26 +6,46 @@ const Login = {
     async _initialListener() {
         document.addEventListener('DOMContentLoaded', () => {
             const loginForm = document.querySelector('#loginForm');
-            loginForm.addEventListener('submit', handleLoginSubmit);
-        });      
+            loginForm.addEventListener(
+                'submit',
+                async (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    loginForm.classList.add('was-validated');
+                    await this._handleLoginSubmit();
+                },
+                false,
+            );
+        });     
     },
 
     _handleLoginSubmit(event) {
-        event.preventDefault();
+        const formData = this._getFormData();
+
+        if(this._validateFormData({ ...formData })) {
+            console.log('formData');
+            console.log(formData);
+        }
+    },
+    
+    _getFormData() {
         const emailInput = document.querySelector('#email');
         const passwordInput = document.querySelector('#password');
-      
-        const email = emailInput.value;
-        const password = passwordInput.value;
-      
-        console.group('Login Form');
-        console.log('request sent to server');
-        console.log(`we'll clean up the form :)`)
-        console.groupEnd();
-      
-        // Clear form inputs then go to main page, can still do soemthing if login fail later
-        emailInput.value = '';
-        passwordInput.value = '';
+        
+        return {
+            email : emailInput.value,
+            password : passwordInput.value
+        }
+    },
+
+    _validateFormData(formData) {
+        const formDataFiltered = Object.values(formData).filter((item) => item === '');
+        return formDataFiltered.length === 0;
+    },
+
+    _goToDashboardPage() {
+        window.location.href = '/';
     }
 }
 
