@@ -19,7 +19,6 @@ const Login = {
         const password = passwordInput.value;
       
         console.group('Login Form');
-        console.log('Email:', email);
         console.log('request sent to server');
         console.log(`we'll clean up the form :)`)
         console.groupEnd();

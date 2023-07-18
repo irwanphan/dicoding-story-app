@@ -9,20 +9,13 @@ const Home = {
         this._userStory = null;
 
         const fetchRecords = await fetch('/data/DATA.json');
-        const responseRecords = await fetchRecords.json()
+        await fetchRecords.json()
             .then((data) => this._userStory = data.listStory);
-        // console.log(this._userStory);
         
         this._populateStoryDataToCard(this._userStory);
     },
    
     _populateStoryDataToCard(stories = null) {
-        if (!(typeof stories === 'object')) {
-            throw new Error(
-                `Parameter responseRecords should be an object.`,
-            );
-        }
-
         if (!Array.isArray(stories)) {
             throw new Error('Parameter stories should be an array.');
         }
@@ -30,10 +23,7 @@ const Home = {
         const recordStories = document.querySelector('#recordStories');
    
         recordStories.innerHTML = '';
-        if (stories.length <= 0) {
-            recordStories.innerHTML = this._templateEmptyStory();
-            return;
-        }
+        
         stories.forEach((item) => {
             recordStories.innerHTML += this._templateStoryCard(item);
         });
