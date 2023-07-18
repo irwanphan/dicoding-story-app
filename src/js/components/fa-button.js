@@ -1,11 +1,8 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
 import { msg } from '@lit/localize';
+import LitElementWithoutShadowDOM from './lit-wrapper';
 
-class FAButton extends LitElement{
-    createRenderRoot() {
-        return this;
-    }
-
+class FAButton extends LitElementWithoutShadowDOM{
     static properties = {
         url: {String}
     }

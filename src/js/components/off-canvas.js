@@ -1,11 +1,8 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import LitElementWithoutShadowDOM from './lit-wrapper';
 
-class OffCanvas extends LitElement{
-    createRenderRoot() {
-        return this;
-    }
-
+class OffCanvas extends LitElementWithoutShadowDOM{
     static properties = {
         links: { type: Array }
     }
