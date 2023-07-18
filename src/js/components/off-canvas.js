@@ -9,13 +9,14 @@ class OffCanvas extends LitElementWithoutShadowDOM{
 
     constructor() {
         super();
-        this.links = [
-            {url: '/', text: 'Home' },
-            {url: '/about.html', text: 'About Dev'},
-            {url: '/stories/add.html', text: 'Add Story'},
-            {url: '/login.html', text: 'Login'},
-        ]
+        // this.links = [
+        //     {url: '/', text: 'Home' },
+        //     {url: '/about.html', text: 'About Dev'},
+        //     {url: '/stories/add.html', text: 'Add Story'},
+        //     {url: '/login.html', text: 'Login'},
+        // ]
     }
+    navLinks = NAV_LINKS;
 
     render() {
         return html`
@@ -33,7 +34,7 @@ class OffCanvas extends LitElementWithoutShadowDOM{
                         <i class="bi bi-person-fill"></i>
                     </div>
                     <div class="offcanvas-nav">
-                        ${this.links.map(({url, text}) => {
+                        ${this.navLinks.map(({url, text}) => {
                             return html`
                                 <a class="nav-link" href="${url}">${text}</a>
                             `
