@@ -86,6 +86,12 @@ module.exports = {
       ...htmlWebpackPluginConfig,
     }),
     new HtmlWebpackPlugin({
+      title: 'Register',
+      filename: 'register.html',
+      template: path.resolve(__dirname, 'src/views/register.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+    new HtmlWebpackPlugin({
       title: 'Add Story',
       filename: 'stories/add.html',
       template: path.resolve(__dirname, 'src/views/stories/add.html'),
