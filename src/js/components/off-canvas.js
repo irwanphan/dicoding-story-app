@@ -6,16 +6,6 @@ class OffCanvas extends LitElementWithoutShadowDOM{
     static properties = {
         links: { type: Array }
     }
-
-    constructor() {
-        super();
-        // this.links = [
-        //     {url: '/', text: 'Home' },
-        //     {url: '/about.html', text: 'About Dev'},
-        //     {url: '/stories/add.html', text: 'Add Story'},
-        //     {url: '/login.html', text: 'Login'},
-        // ]
-    }
     navLinks = NAV_LINKS;
 
     render() {
