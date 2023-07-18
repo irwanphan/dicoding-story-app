@@ -1,10 +1,7 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
+import LitElementWithoutShadowDOM from './lit-wrapper';
 
-class StoryCard extends LitElement{
-    createRenderRoot() {
-        return this;
-    }
-
+class StoryCard extends LitElementWithoutShadowDOM{
     static properties = {
         id: { type: String },
         name: { type: String },

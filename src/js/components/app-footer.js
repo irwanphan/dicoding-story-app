@@ -16,7 +16,6 @@ class AppFooter extends LitElement {
         }
     `;
 
-
     render() {
         return html`
             <div class="app-footer">

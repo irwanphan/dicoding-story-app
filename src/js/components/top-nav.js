@@ -1,11 +1,8 @@
-import { LitElement, html } from 'lit';
+import { html } from 'lit';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import LitElementWithoutShadowDOM from './lit-wrapper';
 
-class TopNav extends LitElement{
-    createRenderRoot() {
-        return this;
-    }
-
+class TopNav extends LitElementWithoutShadowDOM{
     brandName = BRAND_NAME;
     navLinks = NAV_LINKS;
 
