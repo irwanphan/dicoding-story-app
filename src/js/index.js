@@ -14,6 +14,7 @@ import './components/off-canvas';
 import './components/image-preview';
 import './components/app-footer';
 import './components/app-about';
+import './components/lit-wrapper';
 // import * as bootstrap from 'bootstrap';
     
 const routes = {
