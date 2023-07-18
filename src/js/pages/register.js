@@ -8,6 +8,7 @@ const Register = {
     async _initialListener() {
         document.addEventListener('DOMContentLoaded', () => {
             const registerForm = document.querySelector('#registerForm');
+            console.log(registerForm)
             registerForm.addEventListener(
                 'submit',
                 async (event) => {
@@ -15,14 +16,15 @@ const Register = {
                     event.stopPropagation();
 
                     registerForm.classList.add('was-validated');
-                    await this._handleLoginSubmit();
+                    await this._handleRegisterSubmit();
                 },
                 false,
             );
         });     
     },
 
-    async _handleRegisterSubmit() {
+    async _handleRegisterSubmit(event) {
+        event.preventDefault();
         const formData = this._getFormData();
 
         if(this._validateFormData({ ...formData })) {
@@ -37,7 +39,7 @@ const Register = {
                 password: formData.password,
             });
             window.alert('Registered a new user');
-            this._goToLoginPage();
+            // this._goToLoginPage();
         } catch (error) {
             console.error(error);
         }

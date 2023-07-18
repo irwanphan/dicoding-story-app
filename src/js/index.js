@@ -22,6 +22,7 @@ const routes = {
     '/': Home,
     '/about.html': About,
     '/login.html': Login,
+    '/register.html': Register,
     '/stories/add.html': Add,
 };
     
