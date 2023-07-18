@@ -1,3 +1,5 @@
+import Auth from "../auth/auth";
+
 const Register = {
     async init() {
         await this._initialListener();
@@ -20,12 +22,24 @@ const Register = {
         });     
     },
 
-    _handleRegisterSubmit() {
+    async _handleRegisterSubmit() {
         const formData = this._getFormData();
 
         if(this._validateFormData({ ...formData })) {
             console.log('formData');
             console.log(formData);
+        }
+
+        try {
+            await Auth.register({
+                name: formData.name,
+                email: formData.email,
+                password: formData.password,
+            });
+            window.alert('Registered a new user');
+            this._goToLoginPage();
+        } catch (error) {
+            console.error(error);
         }
     },
     
@@ -48,7 +62,10 @@ const Register = {
 
     _goToDashboardPage() {
         window.location.href = '/';
+    },
+    _goToLoginPage() {
+        window.location.href = '/login.html';
     }
 }
 
-export default Login;
+export default Register;
