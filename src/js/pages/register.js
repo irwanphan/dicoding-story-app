@@ -1,18 +1,18 @@
-const Login = {
+const Register = {
     async init() {
         await this._initialListener();
     },
 
     async _initialListener() {
         document.addEventListener('DOMContentLoaded', () => {
-            const loginForm = document.querySelector('#loginForm');
-            loginForm.addEventListener(
+            const registerForm = document.querySelector('#registerForm');
+            registerForm.addEventListener(
                 'submit',
                 async (event) => {
                     event.preventDefault();
                     event.stopPropagation();
 
-                    loginForm.classList.add('was-validated');
+                    registerForm.classList.add('was-validated');
                     await this._handleLoginSubmit();
                 },
                 false,
@@ -20,7 +20,7 @@ const Login = {
         });     
     },
 
-    _handleLoginSubmit() {
+    _handleRegisterSubmit() {
         const formData = this._getFormData();
 
         if(this._validateFormData({ ...formData })) {
@@ -30,10 +30,12 @@ const Login = {
     },
     
     _getFormData() {
+        const nameInput = document.querySelector('#name');
         const emailInput = document.querySelector('#email');
         const passwordInput = document.querySelector('#password');
         
         return {
+            name: nameInput.value,
             email : emailInput.value,
             password : passwordInput.value
         }
