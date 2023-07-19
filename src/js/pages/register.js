@@ -2,29 +2,24 @@ import Auth from "../auth/auth";
 
 const Register = {
     async init() {
-        await this._initialListener();
+        this._initialListener();
+    },
+    
+    _initialListener() {
+        const registerForm = document.querySelector('#registerForm');
+        registerForm.addEventListener('submit',
+            async (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+
+                registerForm.classList.add('was-validated');
+                await this._handleRegisterSubmit();
+            },
+            false,
+        );
     },
 
-    async _initialListener() {
-        document.addEventListener('DOMContentLoaded', () => {
-            const registerForm = document.querySelector('#registerForm');
-            console.log(registerForm)
-            registerForm.addEventListener(
-                'submit',
-                async (event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    registerForm.classList.add('was-validated');
-                    await this._handleRegisterSubmit();
-                },
-                false,
-            );
-        });     
-    },
-
-    async _handleRegisterSubmit(event) {
-        event.preventDefault();
+    async _handleRegisterSubmit() {
         const formData = this._getFormData();
 
         if(this._validateFormData({ ...formData })) {
@@ -39,7 +34,6 @@ const Register = {
                 password: formData.password,
             });
             window.alert('Registered a new user');
-            // this._goToLoginPage();
         } catch (error) {
             console.error(error);
         }
@@ -62,9 +56,6 @@ const Register = {
         return formDataFiltered.length === 0;
     },
 
-    _goToDashboardPage() {
-        window.location.href = '/';
-    },
     _goToLoginPage() {
         window.location.href = '/login.html';
     }

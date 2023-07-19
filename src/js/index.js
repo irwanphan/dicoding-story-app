@@ -17,7 +17,10 @@ import './components/app-footer';
 import './components/app-about';
 import './components/lit-wrapper';
 // import * as bootstrap from 'bootstrap';
-    
+// import './config/config';
+// import './config/api-endpoint';
+// import './auth/auth';
+
 const routes = {
     '/': Home,
     '/about.html': About,

@@ -1,26 +1,23 @@
 const Login = {
     async init() {
-        await this._initialListener();
+        this._initialListener();
     },
 
-    async _initialListener() {
-        document.addEventListener('DOMContentLoaded', () => {
-            const loginForm = document.querySelector('#loginForm');
-            loginForm.addEventListener(
-                'submit',
-                async (event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
+    _initialListener() {
+        const loginForm = document.querySelector('#loginForm');
+        loginForm.addEventListener('submit', 
+            async (event) => {
+                event.preventDefault();
+                event.stopPropagation();
 
-                    loginForm.classList.add('was-validated');
-                    await this._handleLoginSubmit();
-                },
-                false,
-            );
-        });     
+                loginForm.classList.add('was-validated');
+                await this._handleLoginSubmit();
+            },
+            false,
+        );
     },
 
-    _handleLoginSubmit() {
+    async _handleLoginSubmit() {
         const formData = this._getFormData();
 
         if(this._validateFormData({ ...formData })) {
@@ -28,7 +25,7 @@ const Login = {
             console.log(formData);
         }
     },
-    
+
     _getFormData() {
         const emailInput = document.querySelector('#email');
         const passwordInput = document.querySelector('#password');
@@ -46,7 +43,7 @@ const Login = {
 
     _goToDashboardPage() {
         window.location.href = '/';
-    }
+    },
 }
 
 export default Login;
