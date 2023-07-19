@@ -34,6 +34,7 @@ const Register = {
                 password: formData.password,
             });
             window.alert('Registered a new user');
+            this._goToLoginPage();
         } catch (error) {
             console.error(error);
         }
