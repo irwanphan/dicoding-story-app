@@ -1,12 +1,9 @@
 import Auth from "../auth/auth";
 import Utils from "../utils/utils";
 import Config from "../config/config";
-import CheckUserAuth from "../auth/check-user-auth";
 
 const Login = {
     async init() {
-        CheckUserAuth.checkLoginState();
-
         this._initialListener();
     },
 
