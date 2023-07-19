@@ -29,7 +29,13 @@
 
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" required />
+              <div class="input-group">
+                <input type="password" class="form-control" id="password" required />
+                <div class="input-group-text">
+                  <input type="checkbox" id="showPasswordCheckbox" class="d-none"/>
+                  <label for="showPasswordCheckbox"><i class="bi bi-eye-fill"></i></label>
+                </div>
+              </div>
               <div class="invalid-feedback">Please enter your password.</div>
             </div>
 

@@ -10,7 +10,17 @@ const Login = {
     _initialListener() {
         const loginForm = document.querySelector('#loginForm');
         const loginButton = document.querySelector('#loginButton');
-        console.log('loginButton', loginButton)
+        const passwordInput = document.querySelector('#password');
+        const showPasswordCheckbox = document.querySelector('#showPasswordCheckbox');
+
+        showPasswordCheckbox.addEventListener('change', () => {
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+        
         loginForm.addEventListener('submit', 
             async (event) => {
                 event.preventDefault();
