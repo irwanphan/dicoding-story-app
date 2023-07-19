@@ -16,6 +16,7 @@ import './components/image-preview';
 import './components/app-footer';
 import './components/app-about';
 import './components/lit-wrapper';
+import './components/submit-button';
 
 const routes = {
     '/': Home,
