@@ -1,12 +1,20 @@
 import { html } from 'lit';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import LitElementWithoutShadowDOM from './lit-wrapper';
+import CheckUserAuth from '../auth/check-user-auth';
 
 class TopNav extends LitElementWithoutShadowDOM{
     brandName = BRAND_NAME;
     navLinks = NAV_LINKS;
+    
+    connectedCallback() {
+        super.connectedCallback();
+        CheckUserAuth.checkLoginState();
+    }
 
     render() {
+        const { isUserSignedIn } = CheckUserAuth.checkLoginState();
+
         return html`
             <nav class="navbar custom bg-blue">
                 <div class="container px-4">
@@ -29,6 +37,11 @@ class TopNav extends LitElementWithoutShadowDOM{
                                     `
                                 }
                             })}
+                            ${isUserSignedIn ? html`
+                                <li class="nav-item px-2">
+                                    <a class="nav-link" href="/logout">Logout</a>
+                                </li>` : ''
+                            }
                         </ul>
                     </div>
                 </div>
