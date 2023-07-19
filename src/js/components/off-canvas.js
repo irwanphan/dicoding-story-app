@@ -1,6 +1,8 @@
 import { html } from 'lit';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import LitElementWithoutShadowDOM from './lit-wrapper';
+import CheckUserAuth from '../auth/check-user-auth';
+import { logout } from '../utils/logout';
 
 class OffCanvas extends LitElementWithoutShadowDOM{
     static properties = {
@@ -9,6 +11,8 @@ class OffCanvas extends LitElementWithoutShadowDOM{
     navLinks = NAV_LINKS;
 
     render() {
+        const { isUserSignedIn } = CheckUserAuth.checkLoginState();
+
         return html`
             <div class="offcanvas offcanvas-end" 
                 id="staticBackdrop" 
@@ -25,10 +29,15 @@ class OffCanvas extends LitElementWithoutShadowDOM{
                     </div>
                     <div class="offcanvas-nav">
                         ${this.navLinks.map(({url, text}) => {
-                            return html`
-                                <a class="nav-link" href="${url}">${text}</a>
-                            `
+                            if (!(isUserSignedIn && url === '/login.html')) {
+                                return html`
+                                    <a class="nav-link" href="${url}">${text}</a>
+                                `
+                            }
                         })}
+                        ${isUserSignedIn ? html`
+                            <a class="nav-link" href="" @click="${logout}">Logout</a>` : ''
+                        }
                     </div>
                 </div>
             </div>

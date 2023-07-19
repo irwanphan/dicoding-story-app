@@ -14,7 +14,6 @@ const CheckUserAuth = {
                 window.location.href = '/';
             } else {
                 console.log('User is signed in');
-                // this._showLogOut(isUserSignedIn);
             }
         } else {
             if (!isUserOnAuthPage) {

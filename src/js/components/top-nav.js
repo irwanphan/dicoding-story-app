@@ -29,18 +29,18 @@ class TopNav extends LitElementWithoutShadowDOM{
                     ><i class="bi bi-three-dots"></i></button>
                     <div class="d-none d-sm-block">
                         <ul class="navbar-nav d-flex flex-row g-3">
-                            ${this.navLinks.map(({url, text}) => {
-                                if (url !== '/') {
+                            ${this.navLinks.map(({ url, text }) => {
+                                if (url !== '/' && !(isUserSignedIn && url === '/login.html')) {
                                     return html`
                                         <li class="nav-item px-2">
                                             <a class="nav-link" href="${url}">${text}</a>
                                         </li>
-                                    `
+                                    `;
                                 }
                             })}
                             ${isUserSignedIn ? html`
                                 <li class="nav-item px-2">
-                                    <a class="nav-link" @click="${logout}">Logout</a>
+                                    <a class="nav-link" href="" @click="${logout}">Logout</a>
                                 </li>` : ''
                             }
                         </ul>
