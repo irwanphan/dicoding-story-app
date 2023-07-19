@@ -21,4 +21,23 @@ export const getStories = async () => {
     return response.data.listStory;
 }
 
+export const postStory = async ({storyImage, description}) => {
+    try {
+        const formData = new FormData();
+        formData.append('photo', storyImage);
+        formData.append('description', description);
+
+        const response = await axiosInstance.post('/stories', formData, {
+            headers: {
+                'Authorization' : `Bearer ${token}`,
+                'Content-Type' : 'multipart/form-data'
+            }
+        })
+        return response.data;
+    } catch (error) {
+        console.error('API request failed:', error);
+        throw error;
+    }
+}
+
 export default axiosInstance;

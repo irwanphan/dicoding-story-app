@@ -1,3 +1,5 @@
+import { postStory } from "../../config/axios-instance";
+
 const Add = {
     async init() {
         await this._initialListener();
@@ -23,13 +25,17 @@ const Add = {
         );
     },
    
-    _sendPost() {
+    async _sendPost() {
         const formData = this._getFormData();
     
         if (this._validateFormData({ ...formData })) {
             console.log('formData');
             console.log(formData);
         }
+        const response = await postStory(formData);
+
+        alert('Story added successfully');
+        this._goToDashboardPage();
     },
    
     _getFormData() {
