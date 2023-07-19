@@ -1,4 +1,6 @@
-import { msg } from "@lit/localize";
+import Config from "../config/config";
+import Utils from "../utils/utils";
+import axios from "axios";
 
 const Home = {
     async init() {
@@ -8,10 +10,14 @@ const Home = {
     async _initialData() {
         this._userStory = null;
 
-        const fetchRecords = await fetch('/data/DATA.json');
-        await fetchRecords.json()
-            .then((data) => this._userStory = data.listStory);
-        
+        const fetchRecords = await axios.get(`${Config.BASE_URL}/stories`, {
+            headers: {
+                Authorization: `Bearer ${Utils.getUserToken(Config.USER_TOKEN_KEY)}`,
+            },
+        });
+        console.log(fetchRecords.data.listStory);
+        this._userStory = fetchRecords.data.listStory;
+
         this._populateStoryDataToCard(this._userStory);
     },
    

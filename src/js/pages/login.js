@@ -20,24 +20,20 @@ const Login = {
                 passwordInput.type = 'password';
             }
         });
-        
+
         loginForm.addEventListener('submit', 
             async (event) => {
                 event.preventDefault();
                 event.stopPropagation();
 
                 loginForm.classList.add('was-validated');
-                loginButton.setAttribute('disabled', true); // Disable the login button
-                loginButton.setAttribute('isLoading', true); // Show the loading spinner
-
+                loginButton.setAttribute('disabled', true); 
+                loginButton.setAttribute('isLoading', true); 
                 try {
-                    // Call the _handleLoginSubmit() method here
                     await this._handleLoginSubmit();
-                    // If the login process is successful, reset isLoading to false and enable the login button
                     loginButton.setAttribute('isLoading', '');
                     loginButton.setAttribute('disabled', '');
                 } catch (error) {
-                    // If there is an error in the login process, reset isLoading to false and enable the login button
                     loginButton.removeAttribute('isLoading');
                     loginButton.removeAttribute('disabled');
                     console.error(error);
