@@ -2,6 +2,7 @@ import { html } from 'lit';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import LitElementWithoutShadowDOM from './lit-wrapper';
 import CheckUserAuth from '../auth/check-user-auth';
+import { logout } from '../utils/logout';
 
 class TopNav extends LitElementWithoutShadowDOM{
     brandName = BRAND_NAME;
@@ -39,7 +40,7 @@ class TopNav extends LitElementWithoutShadowDOM{
                             })}
                             ${isUserSignedIn ? html`
                                 <li class="nav-item px-2">
-                                    <a class="nav-link" href="/logout">Logout</a>
+                                    <a class="nav-link" @click="${logout}">Logout</a>
                                 </li>` : ''
                             }
                         </ul>

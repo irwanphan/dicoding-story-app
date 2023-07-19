@@ -16,17 +16,13 @@ import './components/image-preview';
 import './components/app-footer';
 import './components/app-about';
 import './components/lit-wrapper';
-// import * as bootstrap from 'bootstrap';
-// import './config/config';
-// import './config/api-endpoint';
-// import './auth/auth';
 
 const routes = {
     '/': Home,
     '/about.html': About,
     '/login.html': Login,
     '/register.html': Register,
-    '/stories/add.html': Add,
+    '/stories/add.html': Add
 };
     
 const detectRoute = () => routes[window.location.pathname];
