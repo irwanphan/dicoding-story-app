@@ -1,6 +1,4 @@
-import Config from "../config/config";
-import Utils from "../utils/utils";
-import axios from "axios";
+import { getStories } from "../config/axios-instance";
 
 const Home = {
     async init() {
@@ -8,16 +6,7 @@ const Home = {
     },
    
     async _initialData() {
-        this._userStory = null;
-
-        const fetchRecords = await axios.get(`${Config.BASE_URL}/stories`, {
-            headers: {
-                Authorization: `Bearer ${Utils.getUserToken(Config.USER_TOKEN_KEY)}`,
-            },
-        });
-        console.log(fetchRecords.data.listStory);
-        this._userStory = fetchRecords.data.listStory;
-
+        this._userStory = await getStories();
         this._populateStoryDataToCard(this._userStory);
     },
    
@@ -27,7 +16,6 @@ const Home = {
         }
 
         const recordStories = document.querySelector('#recordStories');
-   
         recordStories.innerHTML = '';
         
         stories.forEach((item) => {
@@ -52,14 +40,7 @@ const Home = {
                 ></story-card>
             </div>
         `
-    },
-
-    _templateEmptyStory() {
-        const recordStories = document.querySelector('#recordStories');
-        return `
-            <div class="text-center">No story to show</div>
-        `;
-    },
+    }
 };
    
 export default Home;
