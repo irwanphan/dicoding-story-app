@@ -11,7 +11,22 @@ class StoryCard extends LitElement {
         createdAt: { type: Date },
     };
     render() {
-        return html `\n            <div class="card bordered h-100 bg-gradient">\n                <div class="card-body">\n                    <div class="card-author fw-bold mb-2">\n                        <i class="bi bi-person-circle"></i> ${this.name}\n                    </div>\n                    <img src="${this.photoUrl}" class="card-img-top card-img" alt="${this.description}">\n                    <p class="card-text mt-2">${this.description}</p>\n                    <small><i class="bi bi-calendar2-event-fill"></i> ${this.createdAt}</small>\n                </div>\n            </div>\n        `;
+        return html`
+            <div class="card bordered h-100 bg-gradient">
+                <div class="card-body">
+                    <div class="card-author fw-bold mb-2">
+                        <i class="bi bi-person-circle"></i> ${this.name}
+                    </div>
+                    <img
+                        src="${this.photoUrl}"
+                        class="card-img-top card-img"
+                        alt="${this.description}"
+                    />
+                    <p class="card-text mt-2">${this.description}</p>
+                    <small><i class="bi bi-calendar2-event-fill"></i> ${this.createdAt}</small>
+                </div>
+            </div>
+        `;
     }
 }
 customElements.define('story-card', StoryCard);

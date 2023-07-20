@@ -5,8 +5,9 @@ const Home = {
     async _initialData() {
         this._userStory = null;
         const fetchRecords = await fetch('/data/DATA.json');
-        const responseRecords = await fetchRecords.json()
-            .then((data) => this._userStory = data.listStory);
+        const responseRecords = await fetchRecords
+            .json()
+            .then((data) => (this._userStory = data.listStory));
         // console.log(this._userStory);
         this._populateStoryDataToCard(this._userStory);
     },
@@ -28,9 +29,13 @@ const Home = {
         });
     },
     _templateStoryCard(story) {
-        const createdAt = new Date(story.createdAt).toLocaleString("id-ID", {
-            month: 'long', day: 'numeric', year: 'numeric',
-            hour: 'numeric', minute: 'numeric', second: 'numeric'
+        const createdAt = new Date(story.createdAt).toLocaleString('id-ID', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
         });
         return `
             <div class="col-12 col-sm-6 col-lg-4">

@@ -38,6 +38,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: ['/node_modules/', '/src/sass/'],
+        use: ['babel-loader'],
+      },
+      {
         test: /\.(s[ac]ss)$/i,
         use: [
           {

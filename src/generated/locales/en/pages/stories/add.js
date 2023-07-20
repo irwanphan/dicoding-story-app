@@ -8,12 +8,16 @@ const Add = {
             this._updatePhotoPreview();
         });
         const addStoryForm = document.querySelector('#addStoryForm');
-        addStoryForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            addStoryForm.classList.add('was-validated');
-            this._sendPost();
-        }, false);
+        addStoryForm.addEventListener(
+            'submit',
+            (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                addStoryForm.classList.add('was-validated');
+                this._sendPost();
+            },
+            false,
+        );
     },
     _sendPost() {
         const formData = this._getFormData();
@@ -35,11 +39,10 @@ const Add = {
         const storyImageChange = document.querySelector('image-preview');
         const storyImageInput = document.querySelector('#storyImage');
         const photo = storyImageInput.files[0];
-        if (!photo)
-            return;
+        if (!photo) return;
         const reader = new FileReader();
         reader.onload = (event) => {
-            storyImageChange.setAttribute("fileUrl", event.target.result);
+            storyImageChange.setAttribute('fileUrl', event.target.result);
         };
         reader.readAsDataURL(photo);
     },

@@ -1,4 +1,4 @@
-import { getStories } from "../config/axios-instance";
+import { getStories } from '../config/axios-instance';
 
 const Home = {
     async init() {
@@ -12,7 +12,7 @@ const Home = {
         this._populateStoryDataToCard(this._userStory);
         this._isLoading = false;
     },
-   
+
     _populateStoryDataToCard(stories = null) {
         if (!Array.isArray(stories)) {
             throw new Error('Parameter stories should be an array.');
@@ -20,16 +20,20 @@ const Home = {
 
         const recordStories = document.querySelector('#recordStories');
         recordStories.innerHTML = '';
-        
+
         stories.forEach((item) => {
             recordStories.innerHTML += this._templateStoryCard(item);
         });
     },
 
     _templateStoryCard(story) {
-        const createdAt = new Date(story.createdAt).toLocaleString("en-EN", {
-            month: 'long', day: 'numeric', year: 'numeric', 
-            hour: 'numeric', minute: 'numeric', second: 'numeric'
+        const createdAt = new Date(story.createdAt).toLocaleString('en-EN', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
         });
 
         return `
@@ -43,8 +47,8 @@ const Home = {
                     ?isLoading="${this._isLoading}"
                 ></story-card>
             </div>
-        `
-    }
+        `;
+    },
 };
-   
+
 export default Home;

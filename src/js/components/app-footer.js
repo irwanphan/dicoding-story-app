@@ -19,7 +19,13 @@ class AppFooter extends LitElement {
     render() {
         return html`
             <div class="app-footer">
-                ${msg(html`Built with <span class="love">&#9829;</span>, view repo on`)} <a href="https://github.com/irwanphan/dicoding-story-app" target="_blank" rel="noopener noreferrer">GitHub</a>
+                ${msg(html`Built with <span class="love">&#9829;</span>, view repo on`)}
+                <a
+                    href="https://github.com/irwanphan/dicoding-story-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                >
             </div>
         `;
     }

@@ -1,18 +1,18 @@
-import { html, css } from "lit";
-import LitElementWithoutShadowDOM from "./lit-wrapper";
+import { html, css } from 'lit';
+import LitElementWithoutShadowDOM from './lit-wrapper';
 
 class SubmitButton extends LitElementWithoutShadowDOM {
     static properties = {
         text: {
-            type: String
+            type: String,
         },
         disabled: {
-            type: Boolean
+            type: Boolean,
         },
         isLoading: {
-            type: Boolean
-        }
-    }
+            type: Boolean,
+        },
+    };
 
     static styles = css`
         .bordered {
@@ -20,25 +20,26 @@ class SubmitButton extends LitElementWithoutShadowDOM {
             border-color: #0d6efd;
             border-style: solid;
         }
-    `
+    `;
 
     render() {
-        if (this.text === undefined || 
-            this.text === null || 
-            this.text === '') {
+        if (this.text === undefined || this.text === null || this.text === '') {
             this.text = 'Submit';
-        } 
+        }
 
         return html`
             <button type="submit" class="btn btn-blue bordered" ?disabled="${this.disabled}">
                 ${this.isLoading
                     ? html`
-                        <span class="spinner-border spinner-border-sm bordered" role="status" aria-hidden="true"></span>
-                        <span class="visually-hidden">Loading...</span>
-                        <span class="">Loading...</span>
-                    `
-                    : `${this.text}`
-                }
+                          <span
+                              class="spinner-border spinner-border-sm bordered"
+                              role="status"
+                              aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Loading...</span>
+                          <span class="">Loading...</span>
+                      `
+                    : `${this.text}`}
             </button>
         `;
     }

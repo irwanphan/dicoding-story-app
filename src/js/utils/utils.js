@@ -9,5 +9,5 @@ const Utils = {
         return sessionStorage.removeItem(key);
     },
 };
-   
+
 export default Utils;

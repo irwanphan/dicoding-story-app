@@ -1,6 +1,6 @@
-import Auth from "../auth/auth";
-import Utils from "../utils/utils";
-import Config from "../config/config";
+import Auth from '../auth/auth';
+import Utils from '../utils/utils';
+import Config from '../config/config';
 
 const Login = {
     async init() {
@@ -21,14 +21,15 @@ const Login = {
             }
         });
 
-        loginForm.addEventListener('submit', 
+        loginForm.addEventListener(
+            'submit',
             async (event) => {
                 event.preventDefault();
                 event.stopPropagation();
 
                 loginForm.classList.add('was-validated');
-                loginButton.setAttribute('disabled', true); 
-                loginButton.setAttribute('isLoading', true); 
+                loginButton.setAttribute('disabled', true);
+                loginButton.setAttribute('isLoading', true);
                 try {
                     await this._handleLoginSubmit();
                     loginButton.setAttribute('isLoading', '');
@@ -66,11 +67,11 @@ const Login = {
     _getFormData() {
         const emailInput = document.querySelector('#email');
         const passwordInput = document.querySelector('#password');
-        
+
         return {
-            email : emailInput.value,
-            password : passwordInput.value
-        }
+            email: emailInput.value,
+            password: passwordInput.value,
+        };
     },
 
     _validateFormData(formData) {
@@ -81,6 +82,6 @@ const Login = {
     _goToDashboardPage() {
         window.location.href = '/';
     },
-}
+};
 
 export default Login;

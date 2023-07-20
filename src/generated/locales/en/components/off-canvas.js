@@ -1,11 +1,12 @@
 import { LitElement, html } from 'lit';
+import { msg } from '@lit/localize';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 class OffCanvas extends LitElement {
     createRenderRoot() {
         return this;
     }
     static properties = {
-        links: { type: Array }
+        links: { type: Array },
     };
     constructor() {
         super();
@@ -17,9 +18,35 @@ class OffCanvas extends LitElement {
         ];
     }
     render() {
-        return html `\n            <div class="offcanvas offcanvas-end" \n                id="staticBackdrop" \n                tabindex="-1" \n                data-bs-backdrop="static" \n                aria-labelledby="staticBackdropLabel">\n                <div class="offcanvas-header">\n                    <h5 class="offcanvas-title" id="staticBackdropLabel">Story App</h5>\n                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>\n                </div>\n                <div class="offcanvas-body">\n                    <div class="offcanvas-user">\n                        <i class="bi bi-person-fill"></i>\n                    </div>\n                    <div class="offcanvas-nav">\n                        ${this.links.map(({ url, text }) => {
-            return html `\n                                <a class="nav-link" href="${url}">${text}</a>\n                            `;
-        })}\n                    </div>\n                </div>\n            </div>\n        `;
+        return html`
+            <div
+                class="offcanvas offcanvas-end"
+                id="staticBackdrop"
+                tabindex="-1"
+                data-bs-backdrop="static"
+                aria-labelledby="staticBackdropLabel"
+            >
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="staticBackdropLabel">Story App</h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="offcanvas-user">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div class="offcanvas-nav">
+                        ${this.links.map(({ url, text }) => {
+                            return html` <a class="nav-link" href="${url}">${text}</a> `;
+                        })}
+                    </div>
+                </div>
+            </div>
+        `;
     }
 }
 customElements.define('off-canvas', OffCanvas);

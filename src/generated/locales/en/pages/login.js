@@ -22,6 +22,6 @@ const About = {
         // Clear form inputs then go to main page, can still do soemthing if login fail later
         emailInput.value = '';
         passwordInput.value = '';
-    }
+    },
 };
 export default About;

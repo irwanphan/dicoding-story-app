@@ -21,6 +21,7 @@
 // Variables Bootstrap
 //
 @import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
     
 // Menerapkan/override variables Bootstrap apa pun di sini
 $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
