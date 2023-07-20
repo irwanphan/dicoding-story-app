@@ -55,6 +55,7 @@ $theme-colors: map.deep-merge($theme-colors, color.$theme-colors);
 @import '../../../node_modules/bootstrap/scss/forms';
 @import '../../../node_modules/bootstrap/scss/modal';
 @import '../../../node_modules/bootstrap/scss/spinners';
+@import '../../../node_modules/bootstrap/scss/placeholders';
     
 //
 // Utilities API untuk menghasilkan utility classes

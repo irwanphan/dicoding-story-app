@@ -4,10 +4,13 @@ const Home = {
     async init() {
         await this._initialData();
     },
-   
+
+    _isLoading: true,
+
     async _initialData() {
         this._userStory = await getStories();
         this._populateStoryDataToCard(this._userStory);
+        this._isLoading = false;
     },
    
     _populateStoryDataToCard(stories = null) {
@@ -37,6 +40,7 @@ const Home = {
                     photoUrl="${story.photoUrl}"
                     description="${story.description}"
                     createdAt="${createdAt}"
+                    ?isLoading="${this._isLoading}"
                 ></story-card>
             </div>
         `
