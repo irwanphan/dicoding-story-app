@@ -39,7 +39,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: ['/node_modules/', '/src/sass/'],
+        exclude: ['/node_modules/', '/src/sass/', '/src/public/', '/src/generated/'],
         use: ['babel-loader'],
       },
       {

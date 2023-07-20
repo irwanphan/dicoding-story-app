@@ -32,7 +32,8 @@ const Add = {
             console.log('formData');
             console.log(formData);
         }
-        const response = await postStory(formData);
+        const request = await postStory(formData);
+        console.log('request sent: ', request);
 
         alert('Story added successfully');
         this._goToDashboardPage();

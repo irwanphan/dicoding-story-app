@@ -5,9 +5,6 @@ import CheckUserAuth from '../auth/check-user-auth';
 import { logout } from '../utils/logout';
 
 class OffCanvas extends LitElementWithoutShadowDOM {
-    static properties = {
-        links: { type: Array },
-    };
     navLinks = NAV_LINKS;
 
     render() {
