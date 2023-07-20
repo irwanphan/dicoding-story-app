@@ -18,7 +18,7 @@ const Register = {
                 passwordInput.type = 'password';
             }
         });
-        
+
         registerForm.addEventListener(
             'submit',
             async (event) => {
@@ -26,7 +26,17 @@ const Register = {
                 event.preventDefault();
 
                 registerForm.classList.add('was-validated');
-                await this._handleRegisterSubmit();
+                try {
+                    loginButton.setAttribute('disabled', true);
+                    loginButton.setAttribute('isLoading', true);
+                    await this._handleRegisterSubmit();
+                    loginButton.removeAttribute('isLoading');
+                    loginButton.removeAttribute('disabled');
+                } catch (error) {
+                    console.error(error);
+                    loginButton.removeAttribute('isLoading');
+                    loginButton.removeAttribute('disabled');
+                }
             },
             false,
         );
@@ -34,23 +44,33 @@ const Register = {
 
     async _handleRegisterSubmit() {
         const formData = this._getFormData();
+        // Remove shown error messages
+        const emailInput = document.querySelector('#email');
+        const passwordInput = document.querySelector('#password');
+        emailInput.classList.remove('is-invalid');
+        passwordInput.classList.remove('is-invalid');
 
         if (this._validateFormData({ ...formData })) {
-            console.log('formData');
-            console.log(formData);
+            try {
+                await Auth.register({
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password,
+                });
+                window.alert('Registered a new user');
+                this._goToLoginPage();
+            } catch (error) {
+                console.error(error);
+            } 
+        } else {
+            if (!formData.email) {
+                emailInput.classList.add('is-invalid');
+            }
+            if (!formData.password) {
+                passwordInput.classList.add('is-invalid');
+            }
         }
 
-        try {
-            await Auth.register({
-                name: formData.name,
-                email: formData.email,
-                password: formData.password,
-            });
-            window.alert('Registered a new user');
-            this._goToLoginPage();
-        } catch (error) {
-            console.error(error);
-        }
     },
 
     _getFormData() {
