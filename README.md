@@ -12,3 +12,6 @@ To run the project, you need to have node installed on your machine. Then, you c
 ```npm install```
 
 ```npm run build:dev``` or ```npm run build:prod```
+
+This project is deployed on Firebase, and can be accessed through this link: 
+https://fenrir-dc.web.app/
