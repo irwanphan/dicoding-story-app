@@ -7,6 +7,18 @@ const Register = {
 
     _initialListener() {
         const registerForm = document.querySelector('#registerForm');
+        const registerButton = document.querySelector('#registerButton');
+        const passwordInput = document.querySelector('#password');
+        const showPasswordCheckbox = document.querySelector('#showPasswordCheckbox');
+
+        showPasswordCheckbox.addEventListener('change', () => {
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+        
         registerForm.addEventListener(
             'submit',
             async (event) => {
