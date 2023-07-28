@@ -61,6 +61,7 @@ const Register = {
                 this._goToLoginPage();
             } catch (error) {
                 console.error(error);
+                window.alert('Error registering a new user \n' + error.response.data.message);
             } 
         } else {
             if (!formData.email) {
