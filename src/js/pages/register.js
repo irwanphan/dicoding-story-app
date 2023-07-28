@@ -27,15 +27,15 @@ const Register = {
 
                 registerForm.classList.add('was-validated');
                 try {
-                    loginButton.setAttribute('disabled', true);
-                    loginButton.setAttribute('isLoading', true);
+                    registerButton.setAttribute('disabled', true);
+                    registerButton.setAttribute('isLoading', true);
                     await this._handleRegisterSubmit();
-                    loginButton.removeAttribute('isLoading');
-                    loginButton.removeAttribute('disabled');
+                    registerButton.removeAttribute('isLoading');
+                    registerButton.removeAttribute('disabled');
                 } catch (error) {
                     console.error(error);
-                    loginButton.removeAttribute('isLoading');
-                    loginButton.removeAttribute('disabled');
+                    registerButton.removeAttribute('isLoading');
+                    registerButton.removeAttribute('disabled');
                 }
             },
             false,
