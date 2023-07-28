@@ -16,7 +16,7 @@ class ImagePreview extends LitElement {
             background-position: center;
             background-size: contain;
             border: 1px solid #ced4da;
-            height: 100%;
+            height: auto;
             width: 100%;
             display: block;
             border-radius: 0.5rem;
@@ -30,13 +30,14 @@ class ImagePreview extends LitElement {
     }
 
     render() {
+        if (this.fileUrl === '') return html``;
         return html`
-      <img
-        class="previewImage"
-        id="StoryImageUploadChange"
-        src="${this.fileUrl}"
-      ></img>
-    `;
+            <img
+                class="previewImage"
+                id="StoryImageUploadChange"
+                src="${this.fileUrl}"
+            ></img>
+        `;
     }
 }
 
